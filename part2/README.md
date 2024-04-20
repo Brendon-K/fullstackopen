@@ -11,3 +11,12 @@ start: 11:40a, 2.6 done @ 12:18p -- 38m
 2.7 done @ 12:30p -- 12m
 2.8 done @ 12:42p -- 12m
 2.9 done @ 12:57p -- 15m
+nvm I actually wasn't done with 2.9
+~~I spent ages trying to figure out how to make the name addition follow the active filter
+but I just gave up, so it doesn't do that. Changing the filter will reflect properly, but if you add a name that matches the current filter, it doesn't show up immdiately
+hoping that I'm just getting ahead of myself and future lessons cover how to handle this kind of thing
+so... 2.9 "done" I guess~~ @ 2:07p -- 1h 10m
+I was being real stupid I guess, the solution was obvious, I did it properly now. @ 2:17p -- 10m
+Once again went on a wild goose chase. I had forgotten I ALREADY extracted Persons as a component, so I was trying to do some stupid nonsense that made no sense for way too long. I think it's a good time for a break. Finished 2.10 @ 2:33p -- 16m
+
+2c start @ 3:29p, 2.11 finished @ 4:12p -- 43m
