@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import Numbers from './components/Numbers'
+import { useState, useEffect } from 'react'
+import Persons from './components/Persons'
 
 const App = () => {
   const [persons, setPersons] = useState([
@@ -33,6 +33,7 @@ const App = () => {
         const personObject = {
           name: newName,
           number: newNumber,
+          match: false,
           id: persons.length+1
         }
 
@@ -42,7 +43,6 @@ const App = () => {
         setNewNumber('')
       }
     }
-    console.log(persons)
   }
 
   const handleNameChange = (event) => {
@@ -54,6 +54,8 @@ const App = () => {
   }
 
   const handleFilterChange = (event) => {
+    console.log(event.target.value)
+    console.log(persons)
     let filter = event.target.value
     // update filter box
     setNewFilter(filter)
@@ -87,7 +89,7 @@ const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
-      {persons.map(person => person.match ? <Numbers key={person.id} name={person.name} number={person.number}/> : '')}
+      {persons.map(person => person.match ? <Persons key={person.id} name={person.name} number={person.number}/> : '')}
     </div>
   )
 }
