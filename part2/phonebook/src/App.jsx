@@ -30,10 +30,16 @@ const App = () => {
       if (isDuplicate) {
         alert(`${newName} is already added to the phonebook`)
       } else {
+        // check visibility according to active filter
+        let matching = false;
+        if (newName.toLowerCase().includes(newFilter)) {
+          matching = true
+        }
+        
         const personObject = {
           name: newName,
           number: newNumber,
-          match: false,
+          match: matching,
           id: persons.length+1
         }
 
@@ -54,8 +60,6 @@ const App = () => {
   }
 
   const handleFilterChange = (event) => {
-    console.log(event.target.value)
-    console.log(persons)
     let filter = event.target.value
     // update filter box
     setNewFilter(filter)
