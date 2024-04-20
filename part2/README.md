@@ -10,3 +10,4 @@ resume: 8:28p, 2.1 finished 9:26p --  58m
 start: 11:40a, 2.6 done @ 12:18p -- 38m
 2.7 done @ 12:30p -- 12m
 2.8 done @ 12:42p -- 12m
+2.9 done @ 12:57p -- 15m

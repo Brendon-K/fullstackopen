@@ -3,10 +3,14 @@ import Numbers from './components/Numbers'
 
 const App = () => {
   const [persons, setPersons] = useState([
-    { name: 'Arto Hellas', number: '040-1234567', id: 1}
+    { name: 'Arto Hellas', number: '040-123456', match: true, id: 1 },
+    { name: 'Ada Lovelace', number: '39-44-5323523', match: true, id: 2 },
+    { name: 'Dan Abramov', number: '12-43-234345', match: true, id: 3 },
+    { name: 'Mary Poppendieck', number: '39-23-6423122', match: true, id: 4 }
   ]) 
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
+  const [newFilter, setNewFilter] = useState('')
 
   const addPerson = (event) => {
     event.preventDefault()
@@ -38,6 +42,7 @@ const App = () => {
         setNewNumber('')
       }
     }
+    console.log(persons)
   }
 
   const handleNameChange = (event) => {
@@ -48,9 +53,28 @@ const App = () => {
     setNewNumber(event.target.value)
   }
 
+  const handleFilterChange = (event) => {
+    let filter = event.target.value
+    // update filter box
+    setNewFilter(filter)
+
+    // only show people that have names that contain the filter text
+    for (let i in persons) {
+      if (persons[i].name.toLowerCase().includes(filter.toLowerCase())) {
+        persons[i].match = true
+      } else {
+        persons[i].match = false
+      }
+    }
+  }
+
   return (
     <div>
       <h2>Phonebook</h2>
+      <div>
+        filter shown with <input value={newFilter} onChange={handleFilterChange} />
+      </div>
+      <h2>add a new</h2>
       <form onSubmit={addPerson}>
         <div>
           name: <input value={newName} onChange={handleNameChange} />
@@ -63,7 +87,7 @@ const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
-      {persons.map(person => <Numbers key={person.id} name={person.name} number={person.number}/>)}
+      {persons.map(person => person.match ? <Numbers key={person.id} name={person.name} number={person.number}/> : '')}
     </div>
   )
 }
