@@ -1,11 +1,3 @@
-# Commands
-
-Create project
-`npm create vite@latest [project_name] -- --template react`
-
-Run application
-`npm run dev`
-
 # Time taken
 
 1a start 7pm, end 7:50pm -> 50m
