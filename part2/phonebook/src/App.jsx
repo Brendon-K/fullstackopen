@@ -62,6 +62,15 @@ const App = () => {
     }
   }
 
+  // remove a person from the list
+  const removePerson = (id) => {
+    personService
+      .remove(id)
+      .then(response => {
+        setPersons(persons.filter(person => person.id !== id))
+      })
+  }
+
   const handleNameChange = (event) => {
     setNewName(event.target.value)
   }
@@ -110,6 +119,7 @@ const App = () => {
             key={person.id} 
             name={person.name} 
             number={person.number}
+            remove={() => removePerson(person.id)}
           />
         )}
       </div>
