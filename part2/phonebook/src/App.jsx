@@ -64,11 +64,19 @@ const App = () => {
 
   // remove a person from the list
   const removePerson = (id) => {
-    personService
-      .remove(id)
-      .then(response => {
-        setPersons(persons.filter(person => person.id !== id))
-      })
+    console.log(
+      personService
+        .get(id)
+        .then(response => {
+          if (window.confirm(`Delete ${response.data.name}?`)) {
+            personService
+              .remove(id)
+              .then(response => {
+                setPersons(persons.filter(person => person.id !== id))
+              })
+          }
+        })
+    )
   }
 
   const handleNameChange = (event) => {

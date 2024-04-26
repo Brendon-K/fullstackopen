@@ -45,3 +45,5 @@ Okay it was actually because I wasn't updating the state with the correct info. 
 Finished 2.13 @ 7:37a -- 9m
 
 Finished 2.14 @ 7:55a -- 18m
+
+I lied. Forgot to use window.confirm. Finished for realsies @ 8:10a -- 15m
