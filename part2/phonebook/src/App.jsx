@@ -10,6 +10,8 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
   const [newFilter, setNewFilter] = useState('')
 
+  const baseUrl = 'http://localhost:3001/persons'
+
   useEffect(() => {
     axios
       .get('http://localhost:3001/persons')
@@ -49,10 +51,14 @@ const App = () => {
           id: persons.length+1
         }
 
-        let newPersons = persons.concat(personObject)
-        setPersons(newPersons)
-        setNewName('')
-        setNewNumber('')
+
+        axios
+          .post(baseUrl, personObject)
+          .then(response => {
+            setPersons(persons.concat(response.data))
+            setNewName('')
+            setNewNumber('')
+          })
       }
     }
   }
@@ -80,15 +86,33 @@ const App = () => {
     }
   }
 
+  // Create a list of people who match the current search filter
+  const peopleToShow = persons.filter(person => person.match === true)
+
   return (
     <div>
       <h2>Phonebook</h2>
-      <Filter filter={newFilter} onChange={handleFilterChange} />
+      <Filter 
+        filter={newFilter} 
+        onChange={handleFilterChange} 
+      />
       <h2>add a new</h2>
-      <PersonForm onSubmit={addPerson} nameValue={newName} onNameChange={handleNameChange} numberValue={newNumber} onNumberChange={handleNumberChange} />
+      <PersonForm 
+        onSubmit={addPerson} 
+        nameValue={newName} 
+        onNameChange={handleNameChange} 
+        numberValue={newNumber} 
+        onNumberChange={handleNumberChange} 
+      />
       <h2>Numbers</h2>
       <div>
-        {persons.map(person => person.match ? <Persons key={person.id} name={person.name} number={person.number}/> : '')}
+        {peopleToShow.map(person => 
+          <Persons 
+            key={person.id} 
+            name={person.name} 
+            number={person.number}
+          />
+        )}
       </div>
     </div>
   )
