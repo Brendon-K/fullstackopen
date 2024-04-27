@@ -47,3 +47,13 @@ Finished 2.13 @ 7:37a -- 9m
 Finished 2.14 @ 7:55a -- 18m
 
 I lied. Forgot to use window.confirm. Finished for realsies @ 8:10a -- 15m
+
+I think I just realized that my filter STILL DOESN'T WORK PROPERLY. 
+
+Adding a person with an active filter sets their default visibility to false if they don't match the current filter, making it so they won't appear by default when the page reloads (they still appear if they match the filter). Seems like it should be an easy fix, but I have to leave now so just leaving this note for myself when I return. @ 8:28a -- 18m
+
+(note to self: get rid of matching variable entirely, and just array.filter people instead)
+
+resume @ 6:21p
+
+fixed filter problem, and it's soooooo much nicer now actually. I did way too much before. @ 6:26p --5m

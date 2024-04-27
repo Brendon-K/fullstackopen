@@ -37,18 +37,17 @@ const App = () => {
       }
 
       if (isDuplicate) {
-        alert(`${newName} is already added to the phonebook`)
-      } else {
-        // check visibility according to active filter
-        let matching = false;
-        if (newName.toLowerCase().includes(newFilter)) {
-          matching = true
+        // confirm if replace number
+        if (window.confirm(`${newName} is already added to the phonebook.\nReplace the old number with a new one?`)) {
+          console.log('yes')
+          personService.update()
         }
+
+      } else {
 
         const personObject = {
           name: newName,
-          number: newNumber,
-          match: matching
+          number: newNumber
         }
 
         personService
@@ -89,19 +88,10 @@ const App = () => {
     let filter = event.target.value
     // update filter box
     setNewFilter(filter)
-
-    // only show people that have names that contain the filter text
-    for (let i in persons) {
-      if (persons[i].name.toLowerCase().includes(filter.toLowerCase())) {
-        persons[i].match = true
-      } else {
-        persons[i].match = false
-      }
-    }
   }
 
   // Create a list of people who match the current search filter
-  const peopleToShow = persons.filter(person => person.match === true)
+  const peopleToShow = persons.filter(person => person.name.toLowerCase().includes(newFilter))
 
   return (
     <div>
