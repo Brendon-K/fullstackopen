@@ -28,3 +28,4 @@
 | 2.17 Finished |  | 7:30 PM |  | 12 M |
 | 2e continued | 9:11 PM | 10:07 PM | I keep getting distracted and I'm not really making any progress. Break time. | 56 M |
 | 2.18 resume | 11:42 AM | 12:06 PM | Officially finished 2.18, but I kinda DO want to worry about those edge cases, so I'm gonna do that now. | 24 M |
+| Finished outlier |  | 12:11 PM | Okay that was actually really easy. Basically 1 extra line. | 5 M |

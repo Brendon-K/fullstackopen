@@ -14,7 +14,6 @@ const App = () => {
       .get('https://studies.cs.helsinki.fi/restcountries/api/all')
       .then(response => {
         setCountries(response.data)
-        console.log(countries)
       })
   }, [])
 
@@ -23,9 +22,12 @@ const App = () => {
   }
 
   // find possible country matches
-  const matches = countries.filter(country => country.name.common.toLowerCase().includes(newCountry))
-  console.log('matches', matches)
-
+  let matches 
+  // check for a perfect match
+  matches = countries.filter(country => country.name.common.toLowerCase() === newCountry)
+  if (matches.length !== 1) {
+    matches = countries.filter(country => country.name.common.toLowerCase().includes(newCountry))
+  }
 
   return (
     <div>
