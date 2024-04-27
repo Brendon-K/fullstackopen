@@ -24,6 +24,11 @@ const App = () => {
   const addPerson = (event) => {
     event.preventDefault()
 
+    const personObject = {
+      name: newName,
+      number: newNumber
+    }
+
     // decline if the fields are empty
     if (newName === '' || newNumber === '') {
       alert('You need to enter a value in both boxes!')
@@ -40,16 +45,24 @@ const App = () => {
         // confirm if replace number
         if (window.confirm(`${newName} is already added to the phonebook.\nReplace the old number with a new one?`)) {
           console.log('yes')
-          //personService.update()
+          // find id for the given name
+          let id
+          persons.forEach(person => {
+            if (person.name === newName) {
+              id = person.id
+            }
+          })
+          
+          personService
+            .update(id, personObject)
+            .then(response => {
+              setPersons(persons.map(person => person.id !== id ? person : response.data))
+              setNewName('')
+              setNewNumber('')
+            })
         }
 
       } else {
-
-        const personObject = {
-          name: newName,
-          number: newNumber
-        }
-
         personService
           .create(personObject)
           .then(response => {

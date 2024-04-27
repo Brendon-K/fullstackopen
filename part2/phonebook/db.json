@@ -3,50 +3,52 @@
     {
       "name": "Arto Hellas",
       "number": "040-123456",
-      "match": true,
       "id": "1"
     },
     {
       "name": "Ada Lovelace",
       "number": "39-44-5323523",
-      "match": true,
       "id": "2"
     },
     {
       "name": "Dan Abramov",
       "number": "12-43-234345",
-      "match": true,
       "id": "3"
     },
     {
       "name": "Mary Poppendieck",
       "number": "39-23-6423122",
-      "match": true,
       "id": "4"
     },
     {
       "id": "6",
       "name": "Johnathan Blohnathan",
-      "number": "(123) 456-7890",
-      "match": true
+      "number": "(123) 456-7890"
     },
     {
       "id": "7",
       "name": "Stannity Shrant",
-      "number": "(098) 453-1982",
-      "match": true
+      "number": "(098) 453-1982"
     },
     {
       "id": "8",
       "name": "Adam Mada",
-      "number": "(555) 444-4555",
-      "match": true
+      "number": "(555) 444-4555"
     },
     {
       "id": "06fa",
       "name": "Daskin Rawl",
-      "number": "(645) 192-4923",
-      "match": true
+      "number": "(645) 192-4923"
+    },
+    {
+      "name": "Jerky McJerkface",
+      "number": "(333) 222-1111",
+      "id": "597a"
+    },
+    {
+      "id": "3c14",
+      "name": "Stabble Crabble",
+      "number": "(565) 343-1212"
     }
   ]
 }

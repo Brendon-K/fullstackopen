@@ -57,3 +57,5 @@ Adding a person with an active filter sets their default visibility to false if 
 resume @ 6:21p
 
 fixed filter problem, and it's soooooo much nicer now actually. I did way too much before. @ 6:26p --5m
+
+2.15 finished @ 6:49p -- 23m
