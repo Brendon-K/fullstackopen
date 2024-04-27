@@ -61,3 +61,5 @@ fixed filter problem, and it's soooooo much nicer now actually. I did way too mu
 2.15 finished @ 6:49p -- 23m
 
 2.16 finished @ 7:18p -- 29m
+
+2.17 finished @ 7:30p -- 12m

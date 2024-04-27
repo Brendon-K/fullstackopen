@@ -41,11 +41,6 @@
       "number": "(645) 192-4923"
     },
     {
-      "name": "Jerky McJerkface",
-      "number": "(333) 222-1111",
-      "id": "597a"
-    },
-    {
       "id": "3c14",
       "name": "Stabble Crabble",
       "number": "(565) 343-1212"
@@ -64,6 +59,11 @@
       "id": "c6c3",
       "name": "Rankle Wallaby",
       "number": "(481) 987-3241"
+    },
+    {
+      "id": "e555",
+      "name": "Jerky McJerkface",
+      "number": "(111) 222-3333"
     }
   ]
 }

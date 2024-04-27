@@ -12,6 +12,7 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
   const [newFilter, setNewFilter] = useState('')
   const [newMessage, setNewMessage] = useState(null)
+  const [newError, setNewError] = useState(null)
 
   const baseUrl = 'http://localhost:3001/persons'
 
@@ -46,7 +47,6 @@ const App = () => {
       if (isDuplicate) {
         // confirm if replace number
         if (window.confirm(`${newName} is already added to the phonebook.\nReplace the old number with a new one?`)) {
-          console.log('yes')
           // find id for the given name
           let id
           persons.forEach(person => {
@@ -61,6 +61,13 @@ const App = () => {
               setPersons(persons.map(person => person.id !== id ? person : response.data))
               setNewName('')
               setNewNumber('')
+            })
+            .catch(error => {
+              setNewError(`${newName} was not found in the server.`)
+              setTimeout(() => {
+                setNewError(null)
+              }, 3000)
+              setPersons(persons.filter(person => person.id !== id))
             })
         }
 
@@ -77,7 +84,7 @@ const App = () => {
         )
         setTimeout(() => {
           setNewMessage(null)
-        }, 5000)
+        }, 3000)
       }
     }
   }
@@ -118,7 +125,12 @@ const App = () => {
     <div>
       <h2>Phonebook</h2>
       <Notification 
-        message={newMessage} 
+        message={newMessage}
+        type='message' 
+      />
+      <Notification 
+        message={newError} 
+        type='error'
       />
       <Filter 
         filter={newFilter} 

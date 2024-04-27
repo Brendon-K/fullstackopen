@@ -1,9 +1,9 @@
-const Notification = ({message}) => {
+const Notification = ({message, type}) => {
   if (message === null) {
     return null
   }
 
-  const notificationStyle = {
+  const messageStyle = {
     color: 'green',
     fontSize: '20px',
     borderStyle: 'solid',
@@ -12,8 +12,19 @@ const Notification = ({message}) => {
     marginBottom: '10px'
   }
 
+  const errorStyle = {
+    color: 'red',
+    fontSize: '20px',
+    borderStyle: 'solid',
+    borderRadius: '5px',
+    padding: '10px',
+    marginBottom: '10px'
+  }
+
+  const styleType = type === 'message' ? messageStyle : errorStyle
+
   return (
-    <div style={notificationStyle}>
+    <div style={styleType}>
       <p>{message}</p>
     </div>
   )
