@@ -40,7 +40,7 @@ const App = () => {
         // confirm if replace number
         if (window.confirm(`${newName} is already added to the phonebook.\nReplace the old number with a new one?`)) {
           console.log('yes')
-          personService.update()
+          //personService.update()
         }
 
       } else {
