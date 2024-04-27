@@ -3,6 +3,7 @@ import axios from 'axios'
 import Persons from './components/Persons'
 import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
+import Notification from './components/Notification'
 import personService from './services/persons'
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [newFilter, setNewFilter] = useState('')
+  const [newMessage, setNewMessage] = useState(null)
 
   const baseUrl = 'http://localhost:3001/persons'
 
@@ -70,6 +72,12 @@ const App = () => {
             setNewName('')
             setNewNumber('')
           })
+        setNewMessage(
+          `Added ${newName}`
+        )
+        setTimeout(() => {
+          setNewMessage(null)
+        }, 5000)
       }
     }
   }
@@ -109,6 +117,9 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification 
+        message={newMessage} 
+      />
       <Filter 
         filter={newFilter} 
         onChange={handleFilterChange} 
