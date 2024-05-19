@@ -29,3 +29,6 @@
 | 2e continued | 9:11 PM | 10:07 PM | I keep getting distracted and I'm not really making any progress. Break time. | 56 M |
 | 2.18 resume | 11:42 AM | 12:06 PM | Officially finished 2.18, but I kinda DO want to worry about those edge cases, so I'm gonna do that now. | 24 M |
 | Finished outlier |  | 12:11 PM | Okay that was actually really easy. Basically 1 extra line. | 5 M |
+| 2.19 in progress |  | 12:26 PM | I have 0 focus right now. Taking a break. | 15 M |
+| 2.19 in progress | 5:22 PM | 5:42 PM | I think I just need to restart this whole part tbh. Completely stuck. | 20 M |
+| Restarted country thing from scratch | idk | idk | I did end up restarting it, and it was way easier | idk like an hour and a half I guess |
