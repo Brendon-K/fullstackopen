@@ -1,44 +1,43 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import CountryForm from './components/CountryForm'
 import Country from './components/Country'
-import CountryDetails from './components/CountryDetails'
 
-
-const App = () => {
+function App() {
+  const countriesUrl = 'http://localhost:3001/countries'
   const [countries, setCountries] = useState([])
-  const [newCountry, setCountry] = useState('')
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     axios
-      .get('https://studies.cs.helsinki.fi/restcountries/api/all')
+      .get(countriesUrl)
       .then(response => {
         setCountries(response.data)
       })
   }, [])
 
-  const handleCountryChange = (event) => {
-    setCountry(event.target.value)
+  // check for matches
+  const findMatches = (list, searchTerm) => {
+    const matches = list.filter(entry => entry.name.common.toLowerCase().includes(searchTerm.toLowerCase()))
+    return matches
   }
 
-  // find possible country matches
-  let matches 
-  // check for a perfect match
-  matches = countries.filter(country => country.name.common.toLowerCase() === newCountry)
-  if (matches.length !== 1) {
-    matches = countries.filter(country => country.name.common.toLowerCase().includes(newCountry))
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value)
   }
+
+  const showDetails = (country) => {
+      setSearch(country.name.common)
+  }
+
+  const matches = findMatches(countries, search)
 
   return (
-    <div>
-      <CountryForm 
-        countryValue={newCountry} 
-        onCountryChange={handleCountryChange} 
+    <>
+      find countries <input
+        onChange={handleSearchChange}
       />
-      {matches.length > 10 ? ("Too many matches") : null}
-      {matches.length < 11 && matches.length > 1 ? (matches.map(match => <Country key={match.cca2} name={match.name.common} />)) : null }
-      {matches.length === 1 ? (<CountryDetails country={matches[0]} />) : null}
-    </div>
+      <Country countries={matches} buttonClick={showDetails} />
+    </>
   )
 }
 
