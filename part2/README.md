@@ -32,3 +32,4 @@
 | 2.19 in progress |  | 12:26 PM | I have 0 focus right now. Taking a break. | 15 M |
 | 2.19 in progress | 5:22 PM | 5:42 PM | I think I just need to restart this whole part tbh. Completely stuck. | 20 M |
 | Restarted country thing from scratch | idk | idk | I did end up restarting it, and it was way easier | idk like an hour and a half I guess |
+| Finished 2.20 | idk | idk | Finished across two lunch breaks | Probably around an hour |
